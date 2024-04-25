@@ -1,0 +1,32 @@
+.cauresol_img{
+width: 100% !important;
+height: 500px !important;
+}
+
+.c_caption{
+    h3{
+        background-color: rgba(188, 251, 42, 0.463);
+      color: rgb(255, 1, 166);
+      font-weight: bold;
+      font-size: 3rem;
+    }
+    p{
+        // background-color: rgba(188, 251, 42, 0.463);
+         color: black;
+         font-size: larger;
+    }
+}
+.about_sec{
+    background-color: darkorchid;
+}
+@media screen and (max-width:768px) {
+    .cauresol_img{
+        height: 200px !important;
+    }
+    .about_sec{
+   flex-direction: column !important;
+    }
+    .cauresol_img{
+        padding: 2vw;
+    }
+}
