@@ -49,12 +49,18 @@ export default function Home() {
                 </div>
             </section>
             {/* --------our services-------------- */}
-            <section className='service dfdr jcac'>
-                <div class="container text-center">
+            <section className='service  mt-4 pt-4 mb-4 pb-4'>
+                <h2 className="text-center text-danger fw-bold"><b>Our Services</b></h2>
+                <div className="dfdr jc bottom_border">
+                    <span className="one"></span>
+                    <span className="two"></span>
+                    <span className="one"></span>
+                </div>
+                <div class="container dfdr jcac text-center">
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                             <Card style={{ width: '19rem', minHeight:'500px' }}>
-                                <Card.Img variant="top" src="/static/pan.png" />
+                                <Card.Img className='cards' variant="top" src="/static/pan.png" />
                                 <Card.Body>
                                     <Card.Title> <h4><b>Pan Card</b></h4> </Card.Title>
                                     <Card.Text>
@@ -93,13 +99,12 @@ export default function Home() {
                         </div>
 
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                            <Card style={{ width: '18rem', minHeight:'480px' }}>
-                                <Card.Img variant="top" src="holder.js/100px180" />
+                            <Card style={{ width: '19rem', minHeight:'500px' }}>
+                                <Card.Img variant="top" src="/static/gst.jpg" />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Title> <h4><b>GST Registration</b></h4> </Card.Title>
                                     <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
+                                    The Goods and Services Tax (GST) is a successor to VAT used in India on the supply of goods and services.
                                     </Card.Text>
                                     <Button variant="primary">Go somewhere</Button>
                                 </Card.Body>
@@ -107,13 +112,12 @@ export default function Home() {
                         </div>
 
                         <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                            <Card style={{ width: '18rem', minHeight:'480px' }}>
-                                <Card.Img variant="top" src="holder.js/100px180" />
+                            <Card style={{ width: '19rem', minHeight:'500px' }}>
+                                <Card.Img variant="top" src="/static/ippb.png" />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Title> <h4><b>IPPB</b></h4> </Card.Title>
                                     <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
+                                        Now Open Indian Post Payment Bank account at our center. All related services are available.
                                     </Card.Text>
                                     <Button variant="primary">Go somewhere</Button>
                                 </Card.Body>
