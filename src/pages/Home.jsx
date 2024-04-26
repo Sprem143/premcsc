@@ -2,6 +2,8 @@ import './css/Home.scss';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import React from "react";
+
 export default function Home() {
 
     return (
@@ -45,7 +47,7 @@ export default function Home() {
                     </p>
                 </div>
                 <div className='about_img'>
-                    <img src="/static/about.jpg" height="700" alt="" />
+                    <img src="/static/about.jpg" alt="" />
                 </div>
             </section>
             {/* --------our services-------------- */}
@@ -58,13 +60,13 @@ export default function Home() {
                 </div>
                 <div class="container dfdr jcac text-center">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                            <Card style={{ width: '19rem', minHeight:'500px' }}>
+                        <div class="jc col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <Card style={{ width: '19rem', minHeight: '500px' }}>
                                 <Card.Img className='cards' variant="top" src="/static/pan.png" />
                                 <Card.Body>
                                     <Card.Title> <h4><b>Pan Card</b></h4> </Card.Title>
                                     <Card.Text>
-                                    Apply for new Permanent Account Number (PAN) card, changes or corrections in PAN data through online form on my CSC center.
+                                        Apply for new Permanent Account Number (PAN) card, changes or corrections in PAN data through online form on my CSC center.
                                     </Card.Text>
                                     <Button variant="primary">Know More</Button>
                                 </Card.Body>
@@ -72,13 +74,13 @@ export default function Home() {
                         </div>
 
 
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                            <Card style={{ width: '19rem', minHeight:'500px' }}>
+                        <div class=" jc col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <Card style={{ width: '19rem', minHeight: '500px' }}>
                                 <Card.Img variant="top" src="/static/eshram.png" />
                                 <Card.Body>
                                     <Card.Title> <h4><b>E-Shram Card</b></h4> </Card.Title>
                                     <Card.Text>
-                                    An initiative of the Ministry of Labour Dep.,is a step towards building the Aadhaar Authenticated Comprehensive NDUW.
+                                        An initiative of the Ministry of Labour Dep.,is a step towards building the Aadhaar Authenticated Comprehensive NDUW.
                                     </Card.Text>
                                     <Button variant="primary"><a className='text-white' href="https://eshram.gov.in/">Know More</a></Button>
                                 </Card.Body>
@@ -86,33 +88,33 @@ export default function Home() {
                         </div>
 
 
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                            <Card style={{ width: '19rem', minHeight:'500px' }}>
+                        <div class="jc col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <Card style={{ width: '19rem', minHeight: '500px' }}>
                                 <Card.Img variant="top" src="/static/ayushman.png" />
                                 <Card.Body>
                                     <Card.Title> <h4><b>Ayushman Card Card</b></h4> </Card.Title>
                                     <Card.Text>
-                                    PM-JAY is the world's largest health insurance/ assurance scheme fully financed by the government. It provides a cover of Rs. 5 lakhs per family per year
+                                        PM-JAY is the world's largest health insurance/ assurance scheme fully financed by the government. It provides a cover of Rs. 5 lakhs per family per year
                                     </Card.Text>
                                     <Button variant="primary"><a className='text-white' href="https://beneficiary.nha.gov.in/">Know More</a></Button>                                </Card.Body>
                             </Card>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                            <Card style={{ width: '19rem', minHeight:'500px' }}>
+                        <div class="jc col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <Card style={{ width: '19rem', minHeight: '470px' }}>
                                 <Card.Img variant="top" src="/static/gst.jpg" />
                                 <Card.Body>
                                     <Card.Title> <h4><b>GST Registration</b></h4> </Card.Title>
                                     <Card.Text>
-                                    The Goods and Services Tax (GST) is a successor to VAT used in India on the supply of goods and services.
+                                        The Goods and Services Tax (GST) is a successor to VAT used in India on the supply of goods and services.
                                     </Card.Text>
                                     <Button variant="primary">Go somewhere</Button>
                                 </Card.Body>
                             </Card>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                            <Card style={{ width: '19rem', minHeight:'500px' }}>
+                        <div class="jc col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <Card style={{ width: '19rem', minHeight: '470px' }}>
                                 <Card.Img variant="top" src="/static/ippb.png" />
                                 <Card.Body>
                                     <Card.Title> <h4><b>IPPB</b></h4> </Card.Title>
@@ -124,14 +126,13 @@ export default function Home() {
                             </Card>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                            <Card style={{ width: '18rem', minHeight:'480px' }}>
-                                <Card.Img variant="top" src="holder.js/100px180" />
+                        <div class="jc col-lg-4 col-md-6 col-sm-12 mb-4">
+                            <Card style={{ width: '19rem', minHeight: '470px' }}>
+                                <Card.Img variant="top" src="/static/pension.jpg" />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Title> <h4><b>Pension Service</b></h4> </Card.Title>
                                     <Card.Text>
-                                        Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.
+                                        Apply for Old Age Pension scheme to get pension. Instead of that, pension kyc service is also available here.
                                     </Card.Text>
                                     <Button variant="primary">Go somewhere</Button>
                                 </Card.Body>
@@ -139,8 +140,57 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section className="partner dfdc jcac mt-4 mb-4 p-4">
+                <h2 className="text-center text-white"> <b>Our Partners</b> </h2>
+                <div className="dfdr jc bottom_border">
+                    <span className="one"></span>
+                    <span className="two"></span>
+                    <span className="one"></span>
+                </div>
 
 
+                <div className="slider-container dfdr se">
+                    <Card style={{ width: '18rem', }}>
+                        <Card.Img variant="top" src="/static/prem.png" className='br-50' />
+                        <Card.Body>
+                            <Card.Title> <h3><b>Prem Kumar</b></h3>
+                                <h5 className="text-success">VLE & Web developer</h5>
+
+                            </Card.Title>
+                            <Card.Text>
+                                My Service center (Prem Common service center) is located at Hariraha, ward No 09 in supaul District.
+                            </Card.Text>
+                            <Button variant="primary"><a href="/"><span className="text-white">Know more</span></a> </Button>
+                        </Card.Body>
+                    </Card>
+                    <Card style={{ width: '18rem',}} className='card_margin'>
+                        <Card.Img variant="top" src="/static/prem.png" className='br-50' />
+                        <Card.Body>
+                            <Card.Title> <h3><b>Ajay Kumar Sutihar</b></h3>
+                                <h5 className="text-success">CSP and Mobile  accessories</h5>
+
+                            </Card.Title>
+                            <Card.Text>
+                                My Service center (Jay Mata Di Service Center) is located at Hariraha, ward No 06 in supaul District.
+                            </Card.Text>
+                            <Button variant="primary"><a href="/"><span className="text-white">Know more</span></a> </Button>
+                        </Card.Body>
+                    </Card>
+                    <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src="/static/prem.png" className='br-50' />
+                        <Card.Body>
+                            <Card.Title> <h3><b>Ram Kumar</b></h3>
+                                <h5 className="text-success">CSP & Kirana Shop</h5>
+
+                            </Card.Title>
+                            <Card.Text>
+                                My Service center (Baba Govind General Store) is located at Fakirna Chowk,Motipur in supaul District.
+                            </Card.Text>
+                            <Button variant="primary"><a href="/"><span className="text-white">Know more</span></a> </Button>
+                        </Card.Body>
+                    </Card>
+                </div>
             </section>
         </>
     )

@@ -46,7 +46,22 @@ margin-bottom: 20px;
 .carousel-control-next-icon, .carousel-control-prev-icon {
     background-color: black;
 }
+
+.partner{
+    background-color: blueviolet;
+    width: 100%!important;
+    position: static;
+}
+.about_img img{
+    height: 700px;
+}
+.card_margin{
+    margin: 0 3vw;
+}
 @media screen and (max-width:768px) {
+    .card_margin{
+        margin:4vw 0;
+    }
     .cauresol_img{
         height: 200px !important;
     }
@@ -55,5 +70,11 @@ margin-bottom: 20px;
     }
     .cauresol_img{
         padding: 2vw;
+    }
+    .slider-container{
+        flex-direction: column!important;
+    }
+    .about_img img{
+        height: 300px;
     }
 }
