@@ -1,5 +1,61 @@
 .footer{
-    height: 200px;
+    height: 500px;
     width: 100%;
-    background-color: rgb(8, 8, 52);
+    padding: 1vw;
+    color: white;
+    background-color: rgb(16, 16, 70);
+}
+.contactus, .address, .query{
+flex-basis: 30%;
+}
+.queryBox{
+    height: 35vh;
+    width: 95%;
+    border-radius: 7px;
+background-color: white;
+ul li{
+    color: blue;
+}
+}
+.queryBox ul li a{
+    color: blue!important;
+    text-decoration: none;
+}
+.queryBox ul li a:hover{
+    color: rgb(255, 0, 0)!important;
+    text-decoration:underline;
+    font-weight: bold;
+}
+.social_media a{
+    margin: 1vw;
+}
+.whatsapp{
+    button{
+        width: 0!important;
+        background-color: rgb(15, 15, 67);
+        border: none;
+        margin-right: 1.5vw;
+    }
+}
+@media screen and (max-width:760px) {
+    .footer{
+        height: auto;
+        padding: 5vh;
+    }
+    .footer_lower{
+        flex-direction: column !important;
+        align-items: center;
+        gap: 2vh;
+    }
+    .queryBox{
+        width: 50vw;
+        input{
+            width: 40vw;
+            height: 50px;
+            border-radius: 7px;
+        }
+    }
+    .contactus,.address{
+        border-bottom: 1px dashed white;
+    }
 }

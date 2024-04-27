@@ -2,13 +2,15 @@
 width: 100% !important;
 height: 500px !important;
 }
-
+body{
+    background-color: rgb(12, 11, 58)!important;
+}
 .c_caption{
-    h3{
+    h4{
         background-color: rgba(188, 251, 42, 0.463);
       color: rgb(255, 1, 166);
       font-weight: bold;
-      font-size: 3rem;
+      font-size: 2rem;
     }
     p{
         // background-color: rgba(188, 251, 42, 0.463);
@@ -18,6 +20,7 @@ height: 500px !important;
 }
 .about_sec{
     background-color: darkorchid;
+    position: relative;
 }
 
 .service{
@@ -51,6 +54,7 @@ margin-bottom: 20px;
     background-color: blueviolet;
     width: 100%!important;
     position: static;
+    overflow: hidden !important;
 }
 .about_img img{
     height: 700px;
@@ -58,7 +62,53 @@ margin-bottom: 20px;
 .card_margin{
     margin: 0 3vw;
 }
+.headings{
+    transition: 2s;
+    transform-origin:left; 
+}
+.gallery{
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    padding: 2vw;
+    background-color: rgb(17, 8, 51);
+    overflow-x: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
+    img{
+        height: 250px;
+        margin: 0 1vw;
+        box-shadow: 0 0 6px 3px rgba(231, 42, 244, 0.766);
+    }
+}
+.gallery div{
+    white-space:nowrap;
+    animation: animate var(--t) linear infinite;
+    animation-delay: calc(var(--t)*-1);
+
+}
+.gallery div:nth-child(2){
+    animation: animate2 var(--t) linear infinite;
+    animation-delay: calc(var(--t)/-2);
+}
+@keyframes animate {
+0%{transform:translateX(100%);}
+100%{ transform: translateX(-100%); }   
+}
+
+@keyframes animate2 {
+    0%{transform:translateX(0);}
+    100%{ transform: translateX(-200%); }   
+    }
+
+.website_dev div:nth-child(2){
+    padding: 4vw;
+}
+
 @media screen and (max-width:768px) {
+    .website_dev{
+        flex-direction: column !important;
+        align-items: center;
+    }
     .card_margin{
         margin:4vw 0;
     }
