@@ -4,8 +4,14 @@
     --bs-navbar-padding-x:0 !important;
     --bs-navbar-padding-y: 0rem !important;
 }
-.logo_text{
+#logo_text{
+    z-index: 9 !important;
+    margin-left: -5vw;
     font-family: fantasy;
+}
+#links_container{
+margin-right: -20vw;
+    transition: 1s;
 }
 .nav_left{
     display: flex;
@@ -43,6 +49,9 @@ width: 300px !important;
 }
 .btn-close{
     background-color: white !important;
+}
+.blue{
+    color: rgb(76, 76, 254);
 }
 @media screen and (max-width:768px) {
     .nav_link:hover{

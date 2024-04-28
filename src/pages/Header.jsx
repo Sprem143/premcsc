@@ -4,9 +4,18 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useEffect } from 'react';
 export default function Header() {
-
+  useEffect(()=>{
+    document.getElementById("logo_text").style.transition="2s"
+    document.getElementById("logo_text").style.marginLeft="1vw";
+    let links= document.getElementById("links_container");
+    links.style.transition="2s";
+    links.style.marginRight="0"
+  })
   return (
+
+
     <>
 
       {['md'].map((expand) => (
@@ -14,8 +23,8 @@ export default function Header() {
           <Container fluid>
             <Navbar.Brand href="#" className='text-white'>
               <div className='nav_left'>
-                <img src="/static/logo.jpg" alt="" id='logo' />
-                <h3 className='logo_text'>Prem CSC</h3>
+                <img src="/static/logo.jpg" alt="" id='logo' style={{zIndex:"10"}} />
+                <h3 id='logo_text' className='mt-1'>Prem <span className='blue'>C</span>S<span className='blue'>C</span></h3>
               </div>
 
             </Navbar.Brand>
@@ -31,7 +40,7 @@ export default function Header() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav className="justify-content-end flex-grow-1 pe-3" id='links_container'>
                   <Nav.Link href="#action1" className='nav_link'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className=" me-2 bi bi-house" viewBox="0 0 16 16">
                       <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />

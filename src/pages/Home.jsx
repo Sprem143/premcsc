@@ -142,7 +142,7 @@ export default function Home() {
 
 <section className='website_dev dfdr'>
     <div>
-   <img src="/static/web.jpg" alt="advertisement"  />
+   <img src="/static/web.jpg" alt="advertisement" className='adv' />
     </div>
     <div>
         <h2 className="text-center text-white">Website Development</h2>
