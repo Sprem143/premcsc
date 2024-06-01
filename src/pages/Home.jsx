@@ -2,32 +2,98 @@ import './css/Home.scss';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useState } from 'react';
 import React from "react";
 import {loadStripe} from '@stripe/stripe-js';
-
-
+import { useNavigate} from 'react-router-dom';
 export default function Home() {
+const[amount, setAmount]= useState(500);
+const navigate = useNavigate();
 
+    // payment using stripe---------
+// const payment=async()=>{
+//     console.log("payment function")
+//     const stripe = await loadStripe('pk_test_51PKx8gSGTUV9SS60CpmvxbuRoH7pBkdNcvgREvCLqv9IhQlDNRKkO55VxpfnwWtvGj2Bo2BHxDWhvWuW053YUivr00sMPf2Jgw');
+//     let product=[{name:"Pan card",price:"250", quantity:"1"}]
+// let result= await fetch("http://localhost:8050/api/create-checkout-session",{
+//     method:"POST",
+//     headers:{'Content-Type':'application/json'},
+//     body: JSON.stringify({product})
+// })
+// result= await result.json()
+
+// const res = stripe.redirectToCheckout({
+//     sessionId:result.id
+// });
+
+// if(res.error){
+//     console.log(res.error);
+// }
+// console.log("payment function2")
+
+// }
+
+// ---------payment using razorpay------------
 const payment=async()=>{
-    console.log("payment function")
-    const stripe = await loadStripe('pk_test_51PKx8gSGTUV9SS60CpmvxbuRoH7pBkdNcvgREvCLqv9IhQlDNRKkO55VxpfnwWtvGj2Bo2BHxDWhvWuW053YUivr00sMPf2Jgw');
-    let product=[{name:"Pan card",price:"250", quantity:"1"}]
-let result= await fetch("http://localhost:8050/api/create-checkout-session",{
-    method:"POST",
-    headers:{'Content-Type':'application/json'},
-    body: JSON.stringify({product})
-})
-result= await result.json()
+    
 
-const res = stripe.redirectToCheckout({
-    sessionId:result.id
-});
-
-if(res.error){
-    console.log(res.error);
+try{
+    let res= await fetch("http://localhost:8050/payment",{
+        method:"POST",
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({amount})
+    })
+   res= await res.json();
+ console.log(res.data)
+   verifyPayment(res.data);
+}catch(err){
+    console.log(err)
 }
-console.log("payment function2")
+}
 
+// -----verify payment--------
+const verifyPayment = async (data) => {
+    const options = {
+        key: 'rzp_test_hGuw7Ar8wHdLhs',
+        amount: data.amount,
+        currency: data.currency,
+        name: "Prem Kumar",
+        description: "Test Mode",
+        order_id: data.id,
+        handler: async (response) => {
+            console.log("response", response)
+            try {
+                const res = await fetch(`http://localhost:8050/verifypayment`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        razorpay_order_id: response.razorpay_order_id,
+                        razorpay_payment_id: response.razorpay_payment_id,
+                        razorpay_signature: response.razorpay_signature,
+                    })
+                })
+
+                const verifyData = await res.json();
+
+                if (verifyData.message=="Successful") {
+                    alert(verifyData.message)
+                     navigate('/success')
+                }else{
+                    alert(verifyData.message)
+                    navigate('/cancel')
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        theme: {
+            color: "#5f63b8"
+        }
+    };
+    const rzp1 = new window.Razorpay(options);
+    rzp1.open();
 }
 
     return (

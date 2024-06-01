@@ -10,6 +10,7 @@ import TandC from './pages/TandC';
 import SandD from './pages/SandD';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import CandR from './pages/CandR';
+import Support from './pages/Support';
 function App() {
 
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/terms&conditions' element={<TandC/>}/>
           <Route path='/shipping&delivery' element={<SandD />}/>
           <Route path='/cancel&refund' element={<CandR />}/>
+          <Route path='/support' element={<Support />}/>
         </Routes>
         <Footer />
       </BrowserRouter>
